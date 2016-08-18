@@ -38,3 +38,10 @@ def subsequent_day(day: String) : String = {
 	converter(day)
 }
 /**********************************************************/
+def dates(vec: Array[String]): Array[String] = {
+	vec.map(x => x.slice(6,7) + "/" + x.slice(4,5) + "/" + x.slice(0,3))
+}
+/**********************************************************/
+def add_holidays(vd: Array[String]): Array[Int] = {
+	
+}
