@@ -43,5 +43,31 @@ def dates(vec: Array[String]): Array[String] = {
 }
 /**********************************************************/
 def add_holidays(vd: Array[String]): Array[Int] = {
-	
+	val pasqua = List("04/04/2010", "24/04/2011", "08/04/2012", "31/03/2013",
+		"20/04/2014", "05/04/2015", "27/03/2016")
+	val pasquetta = List("05/04/2010", "25/04/2011", "09/04/2012", "01/04/2013",
+		"21/04/2014", "06/04/2015", "28/03/2016")
+	val hol = scala.collection.mutable.ArrayBuffer.empty[Int]
+	for(i <- 0 until vd.length){
+		val x = vd(i)
+		if(x.slice(0,4) == "01/01") {hol += 1}
+		else if (x.slice(0,4) == "06/01") {hol += 2}
+		else if (x.slice(0,4) == "25/04") {hol += 5}
+		else if (x.slice(0,4) == "01/05") {hol += 6}
+		else if (x.slice(0,4) == "02/06") {hol += 7}
+		else if (x.slice(0,4) == "15/08") {hol += 8}
+		else if (x.slice(0,4) == "01/11") {hol += 9}
+		else if (x.slice(0,4) == "08/12") {hol += 10}
+		else if (x.slice(0,4) == "25/12") {hol += 11}
+		else if (x.slice(0,4) == "26/12") {hol += 12}
+		else if (x.slice(0,4) == "31/12") {hol += 13}
+		else if (pasqua.contains(x)) {hol += 3}
+		else if (pasquetta.contains(x)) {hol += 4}
+		else {hol += 0}
+	}
+	hol.toArray
 }
+/*******************************************************/
+
+
+
