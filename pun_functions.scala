@@ -1,5 +1,5 @@
-package PUNPREDICTION
-import scala.math
+package scala.math
+import framian._
 
 object PUNPREDICTION {
 
@@ -26,7 +26,7 @@ object PUNPREDICTION {
 		scala.math.cos(converter(day) * scala.math.Pi * (1/7))
 	}
 /*********************************************************/
-	def convert_hour_to_angle(ora: Array[Int]): Double = {
+	def convert_hour_to_angle(ora: Array[Int]): Array[Double] = {
 		ora.map(x => scala.math.sin((x - 12) * scala.math.Pi * (1/24)))
 	}
 /*********************************************************/
@@ -71,9 +71,6 @@ object PUNPREDICTION {
 		hol.toArray
 	}
 /*******************************************************/
-
-
-println(ConvertDay("Mon"))
-
 }
+
 
