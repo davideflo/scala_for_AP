@@ -3,6 +3,11 @@ import framian._
 
 object PUNPREDICTION {
 
+	def which(l: List[Any], p: Int): Int = 
+	{
+		l.zipWithIndex.filter(_._1 == p)(0)._2
+	}
+/*********************************************************/
 	def ConvertDay(day: String): String = {
 		val converter = Map("Sun" -> "dom",
 			"Mon" -> "lun",
@@ -71,6 +76,11 @@ object PUNPREDICTION {
 		hol.toArray
 	}
 /*******************************************************/
+	def associate_meteo_ora(data: Array[String], meteo: Frame, meteovar: String): Array[Double] = {
+		val vm = scala.collection.mutable.ArrayBuffer.empty[Double]
+		
+	}
+
 }
 
 
